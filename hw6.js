@@ -6,7 +6,7 @@ var filter = document.getElementById('filter');
 var dataArr = [];
 var brr = [];
 var crr = [];
-
+var numRows = 0;
 // Form submit event
 form.addEventListener('submit', addItem);
 
@@ -22,6 +22,9 @@ function addItem(e){
 	var newItem2 = parseInt(document.getElementById('item2').value);
 	var newItem3 = parseInt(document.getElementById('item3').value);
 	var newItem4 = parseInt(document.getElementById('item4').value);
+	//clear out the table 
+	for(var i = 0; i <= numRows + 1; i++)
+		 document.getElementById("mult").deleteRow(-1);
 
 	if(newItem < newItem2){
 	var numCols = newItem2 - newItem;
@@ -32,13 +35,13 @@ function addItem(e){
 	numCols = newItem - newItem2;
 	}
 	if(newItem3 < newItem4) {
-	var numRows = newItem4 - newItem3;
+	numRows = newItem4 - newItem3;
 	console.log('newItem4: ' + newItem4 + ', newItem3: ' +  newItem3);
 
 	}
 	else {
 	item3Big = 1;
-	var numRows = newItem3 - newItem4;
+	numRows = newItem3 - newItem4;
 	console.log('newItem3: ' + newItem3 + ', newItem4: ' +  newItem4);
 	}
 	console.log(typeof newItem);
