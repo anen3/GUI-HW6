@@ -1,5 +1,6 @@
 //modified the example from w3schools to add multiple rows using a loop https://www.w3schools.com/jsref/met_table_insertrow.asp 
 //figured out some form/dom manipulation from traversy dom crash course 4
+//generating a table using appendChild
 var form = document.getElementById('addForm');
 var filter = document.getElementById('filter');
 var dataArr = [];
