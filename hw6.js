@@ -1,6 +1,7 @@
+//modified the example from w3schools to add multiple rows using a loop https://www.w3schools.com/jsref/met_table_insertrow.asp 
+//figured out some form/dom manipulation from traversy dom crash course 4
 var form = document.getElementById('addForm');
 var filter = document.getElementById('filter');
-
 var dataArr = [];
 var brr = [];
 var crr = [];
@@ -73,9 +74,9 @@ function addItem(e){
 			  
 			  for( i = newItem2; i <= newItem; i++) // adds in j entries per row
 			  {
-			  a.push(row.insertCell(-1));
-			  console.log((typeof a[a.length-1]));
-			  a[a.length -1].innerHTML = q * i;
+				  a.push(row.insertCell(-1));
+				  console.log((typeof a[a.length-1]));
+				  a[a.length -1].innerHTML = q * i;
 			  }
 		  }
 		}
@@ -89,7 +90,7 @@ function addItem(e){
 			  console.log((typeof a[a.length-1]));
 			  a[a.length -1].innerHTML = q; // insert the y value into a cell
 			  
-			  for( i = newItem; i <= newItem2; i++) // adds in j entries per row
+			  for( i = newItem2; i <= newItem; i++) // adds in j entries per row
 			  {
 			  a.push(row.insertCell(-1));
 			  console.log((typeof a[a.length-1]));
@@ -100,7 +101,7 @@ function addItem(e){
 	}
 	else { // when x range 2 is larger than x range 1
 		//print out x range in mult table ex: range 1 to 4 gives first  : 1 2 3 4 
-		for( i = newItem; i <= newItem2; i++)  // insert the entries for the first row
+		for(i = newItem; i <= newItem2; i++)  // insert the entries for the first row
 		  {
 		  a.push(row.insertCell(-1));
 		  console.log((typeof a[a.length-1]));
@@ -115,12 +116,11 @@ function addItem(e){
 			  a.push(row.insertCell(-1));
 			  console.log((typeof a[a.length-1]));
 			  a[a.length -1].innerHTML = q; // insert the y value into a cell
-			  
-			  for( i = newItem2; i <= newItem; i++) // adds in j entries per row
+			  for(i = newItem; i <= newItem2; i++) // adds in j entries per row
 			  {
-			  a.push(row.insertCell(-1));
-			  console.log((typeof a[a.length-1]));
-			  a[a.length -1].innerHTML = q * i;
+				  a.push(row.insertCell(-1));
+				  console.log((typeof a[a.length-1]));
+				  a[a.length -1].innerHTML = q * i;
 			  }
 		  }
 		}
@@ -133,12 +133,11 @@ function addItem(e){
 			  a.push(row.insertCell(-1));
 			  console.log((typeof a[a.length-1]));
 			  a[a.length -1].innerHTML = q; // insert the y value into a cell
-			  
 			  for(i = newItem; i <= newItem2; i++) // adds in j entries per row
 			  {
-			  a.push(row.insertCell(-1));
-			  console.log((typeof a[a.length-1]));
-			  a[a.length -1].innerHTML = q * i;
+				  a.push(row.insertCell(-1));
+				  console.log((typeof a[a.length-1]));
+				  a[a.length -1].innerHTML = q * i;
 			  }
 		  }
 		}
