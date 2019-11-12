@@ -2,8 +2,6 @@
 //figured out some form/dom manipulation from traversy dom crash course 4
 //generating a table using appendChild
 var form = document.getElementById('addForm');
-var brr = [];
-var crr = [];
 var numRows = 0;
 // Form submit event
 form.addEventListener('submit', addItem);
@@ -50,7 +48,7 @@ function addItem(e){
 		 document.getElementById("mult").deleteRow(-1);
 
 	if(newItem < newItem2){
-	var numCols = newItem2 - newItem;
+		var numCols = newItem2 - newItem;
 	}
 	else {
 		item1Big = 1;
@@ -66,49 +64,39 @@ function addItem(e){
 		numRows = newItem3 - newItem4;
 		console.log('newItem3: ' + newItem3 + ', newItem4: ' +  newItem4);
 	}
-	console.log(typeof newItem);
-	console.log(numCols);
-	console.log(numRows);
-	
-	var row = table.insertRow(-1);
 	var a = [];
-	var txt = "";
-	var i;
-	var table = document.getElementById("mult");
-	var row = table.insertRow(-1);
-	// var table and row set up to insert empty cell in first row
+	var table = document.getElementById("mult"); // var table and row set up to insert empty cell in first row
+	var row = table.insertRow(-1); // var table and row set up to insert empty cell in first row
 	a.push(row.insertCell(-1));
-	console.log((typeof a[a.length-1]));
 	a[a.length -1].innerHTML = ""; // empty cell 
 	if(item1Big) {
-		
 		for( i = newItem2; i <= newItem; i++)  // insert the entries for the first row
-		  {
-		  a.push(row.insertCell(-1));
-		  console.log((typeof a[a.length-1]));
-		  a[a.length -1].innerHTML = i;
-		  }
+		{
+			a.push(row.insertCell(-1));
+			console.log((typeof a[a.length-1]));
+			a[a.length -1].innerHTML = i;
+		}
 		if(item3Big) {
 			console.log('case 1');
-		  for(q = newItem4; q <= newItem3; q++) // prints j rows
-		  {
-			  var table = document.getElementById("mult");
-			  var row = table.insertRow(-1);
-			  a.push(row.insertCell(-1));
-			  console.log((typeof a[a.length-1]));
-			  a[a.length -1].innerHTML = q; // insert the y value into a cell
-			  
-			  for( i = newItem2; i <= newItem; i++) // adds in j entries per row
-			  {
+			for(var q = newItem4; q <= newItem3; q++) // prints j rows
+			{
+				var table = document.getElementById("mult");
+				var row = table.insertRow(-1);
+				a.push(row.insertCell(-1));
+				console.log((typeof a[a.length-1]));
+				a[a.length -1].innerHTML = q; // insert the y value into a cell
+
+				for(var i = newItem2; i <= newItem; i++) // adds in j entries per row
+				{
 				  a.push(row.insertCell(-1));
 				  console.log((typeof a[a.length-1]));
 				  a[a.length -1].innerHTML = q * i;
-			  }
-		  }
+				}
+			}
 		}
 		else {
 			console.log('case 2');
-			for(q = newItem3; q <= newItem4; q++) // prints j rows
+			for(var q = newItem3; q <= newItem4; q++) // prints j rows
 		  {
 			  var table = document.getElementById("mult");
 			  var row = table.insertRow(-1);
@@ -116,11 +104,11 @@ function addItem(e){
 			  console.log((typeof a[a.length-1]));
 			  a[a.length -1].innerHTML = q; // insert the y value into a cell
 			  
-			  for( i = newItem2; i <= newItem; i++) // adds in j entries per row
+			  for(var i = newItem2; i <= newItem; i++) // adds in j entries per row
 			  {
-			  a.push(row.insertCell(-1));
-			  console.log((typeof a[a.length-1]));
-			  a[a.length -1 ].innerHTML = q * i;
+				  a.push(row.insertCell(-1));
+				  console.log((typeof a[a.length-1]));
+				  a[a.length -1 ].innerHTML = q * i;
 			  }
 		  }
 		}
@@ -135,14 +123,14 @@ function addItem(e){
 		  }
 		if(item3Big) {
 			console.log('case 3');
-		  for(q = newItem4; q <= newItem3; q++) // prints j rows
+		  for(var q = newItem4; q <= newItem3; q++) // prints j rows
 		  {
 			  var table = document.getElementById("mult");
 			  var row = table.insertRow(-1);
 			  a.push(row.insertCell(-1));
 			  console.log((typeof a[a.length-1]));
 			  a[a.length -1].innerHTML = q; // insert the y value into a cell
-			  for(i = newItem; i <= newItem2; i++) // adds in j entries per row
+			  for(var i = newItem; i <= newItem2; i++) // adds in j entries per row
 			  {
 				  a.push(row.insertCell(-1));
 				  console.log((typeof a[a.length-1]));
@@ -159,7 +147,7 @@ function addItem(e){
 			  a.push(row.insertCell(-1));
 			  console.log((typeof a[a.length-1]));
 			  a[a.length -1].innerHTML = q; // insert the y value into a cell
-			  for(i = newItem; i <= newItem2; i++) // adds in j entries per row
+			  for(var i = newItem; i <= newItem2; i++) // adds in j entries per row
 			  {
 				  a.push(row.insertCell(-1));
 				  console.log((typeof a[a.length-1]));
