@@ -2,8 +2,6 @@
 //figured out some form/dom manipulation from traversy dom crash course 4
 //generating a table using appendChild
 var form = document.getElementById('addForm');
-var filter = document.getElementById('filter');
-var dataArr = [];
 var brr = [];
 var crr = [];
 var numRows = 0;
@@ -22,6 +20,31 @@ function addItem(e){
 	var newItem2 = parseInt(document.getElementById('item2').value);
 	var newItem3 = parseInt(document.getElementById('item3').value);
 	var newItem4 = parseInt(document.getElementById('item4').value);
+	//catch invalid inputs and inform user
+	if(isNaN(newItem))
+	{
+		alertNaN();
+		return;
+	}
+		
+	if(isNaN(newItem2))
+	{
+		alertNaN();
+		return;
+	}
+		
+	if(isNaN(newItem3))
+	{
+		alertNaN();
+		return;
+	}
+	if(isNaN(newItem4))
+	{
+		alertNaN();
+		return;
+	}
+
+
 	//clear out the table 
 	for(var i = 0; i <= numRows + 1; i++)
 		 document.getElementById("mult").deleteRow(-1);
@@ -29,20 +52,19 @@ function addItem(e){
 	if(newItem < newItem2){
 	var numCols = newItem2 - newItem;
 	}
-	else 
-	{
-	item1Big = 1;
-	numCols = newItem - newItem2;
+	else {
+		item1Big = 1;
+		numCols = newItem - newItem2;
 	}
 	if(newItem3 < newItem4) {
-	numRows = newItem4 - newItem3;
-	console.log('newItem4: ' + newItem4 + ', newItem3: ' +  newItem3);
+		numRows = newItem4 - newItem3;
+		console.log('newItem4: ' + newItem4 + ', newItem3: ' +  newItem3);
 
 	}
 	else {
-	item3Big = 1;
-	numRows = newItem3 - newItem4;
-	console.log('newItem3: ' + newItem3 + ', newItem4: ' +  newItem4);
+		item3Big = 1;
+		numRows = newItem3 - newItem4;
+		console.log('newItem3: ' + newItem3 + ', newItem4: ' +  newItem4);
 	}
 	console.log(typeof newItem);
 	console.log(numCols);
@@ -146,40 +168,9 @@ function addItem(e){
 		  }
 		}
 	}
+}
 
-
-	/*  var emptySpace = document.createElement('th');
-	table.appendChild(emptySpace);
-	for(var i = 0; i <= numCols; i++){
-	arr[i]=(document.createElement('th'));
-	arr[i].appendChild(document.createTextNode(parseInt(newItem) + i));
-	table.appendChild(arr[i]);
-	}
-	for(var i = 0; i <= numRows; i++){
-	brr[i]=(document.createElement('tr'));
-	brr[i].appendChild(document.createTextNode(parseInt(newItem3) + i));
-	table.appendChild(brr[i]);
-	} */
-
-
-
-
-	/* // Create new li element
-	var tr = document.createElement('tr');
-	var th = document.createElement('th');
-
-	// Add class
-
-	// Add text node with input value
-	tr.appendChild(document.createTextNode(newItem)); // nodes, once appended, it is used. 
-	th.appendChild(document.createTextNode(newItem2)); // need to make new textnode and 
-	// Append li to list
-
-
-	table.appendChild(th);
-	table.appendChild(tr);
-	*/
-
-
+function alertNaN() {
+  alert("At least one of your entries is not a number. Table did not get created.");
 }
 
