@@ -132,8 +132,3 @@ function addItem(e){
 		}
 	}
 }
-
-function alertNaN() {
-  alert("At least one of your entries is not a number. Table did not get created.");
-}
-
