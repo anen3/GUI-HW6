@@ -1,0 +1,16 @@
+/*Alex Nguyen
+alex_nguyen@student.uml.edu
+UMass Lowell COMP4610 GUI Programming I
+Purpose of this webpage: Practicing js by implementing a dynamic table*/
+
+.heading {
+	background-color: white;
+	margin:0 auto;
+	max-width: 80%;
+	display: flex;
+	flex-direction: column;
+	align-items: center; /* justify items on the cross axis(y axis)*/
+
+	height: 200px;
+	border: solid;
+}
