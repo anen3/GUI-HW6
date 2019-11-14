@@ -54,6 +54,7 @@ function addItem(e){
 	var a = [];
 	var table = document.getElementById("mult"); // var table and row set up to insert empty cell in first row
 	var row = table.insertRow(-1); // var table and row set up to insert empty cell in first row
+	row.id = 'first';
 	a.push(row.insertCell(-1));
 	a[a.length -1].innerHTML = ""; // empty cell 
 	if(item1Big) { //print table case 1 the first x input is greater than the second x input
