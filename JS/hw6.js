@@ -14,7 +14,7 @@ form.addEventListener('submit', addItem);
 // Add item 
 function addItem(e){ 
 	var table = document.getElementById('mult');
-	var arr = [];
+	var arr = []; //holds table entries
 	e.preventDefault();
 	var item3Big = 0;
 	var item1Big = 0;
@@ -41,11 +41,9 @@ function addItem(e){
 	}
 	else {
 		item1Big = 1;
-		numCols = newItem - newItem2;
 	}
 	if(newItem3 < newItem4) {
 		numRows = newItem4 - newItem3;
-
 	}
 	else {
 		item3Big = 1;
@@ -54,7 +52,7 @@ function addItem(e){
 	var a = [];
 	var table = document.getElementById("mult"); // var table and row set up to insert empty cell in first row
 	var row = table.insertRow(-1); // var table and row set up to insert empty cell in first row
-	row.id = 'first';
+	row.id = 'first'; // allows for css selector to select table row elements after first
 	a.push(row.insertCell(-1));
 	a[a.length -1].innerHTML = ""; // empty cell 
 	if(item1Big) { //print table case 1 the first x input is greater than the second x input
@@ -63,30 +61,30 @@ function addItem(e){
 			a.push(row.insertCell(-1));
 			a[a.length -1].innerHTML = i;
 		}
-		if(item3Big) { //prints table case where y input 3 is greater than y input 4
-			for(var q = newItem4; q <= newItem3; q++) // prints j rows
+		if(item3Big) { //print table case where second y input is greater than first y input 
+			for(var q = newItem4; q <= newItem3; q++) //printing rows from second Y input to first Y Input 
 			{
 				var table = document.getElementById("mult");
 				var row = table.insertRow(-1);
 				a.push(row.insertCell(-1));
-				a[a.length -1].innerHTML = q; // insert the y value into a cell
+				a[a.length -1].innerHTML = q; // insert the q value into a cell
 
-				for(var i = newItem2; i <= newItem; i++) // adds in j entries per row
+				for(var i = newItem2; i <= newItem; i++) // adds in entries from second X Input to first X Input
 				{
 				  a.push(row.insertCell(-1));
 				  a[a.length -1].innerHTML = q * i;
 				}
 			}
 		}
-		else { //prints table case where y input 3 is less than y input 4
-			for(var q = newItem3; q <= newItem4; q++) // prints j rows
+		else { //print table case where second y input is greater than first y input 
+			for(var q = newItem3; q <= newItem4; q++) //printing rows from first Y input second Y Input 
 		  {
 			  var table = document.getElementById("mult");
 			  var row = table.insertRow(-1);
 			  a.push(row.insertCell(-1));
-			  a[a.length -1].innerHTML = q; // insert the y value into a cell
+			  a[a.length -1].innerHTML = q; // insert the q value into a cell
 			  
-			  for(var i = newItem2; i <= newItem; i++) // adds in j entries per row
+			  for(var i = newItem2; i <= newItem; i++) // adds in entries from second X Input to first X Input
 			  {
 				  a.push(row.insertCell(-1));
 				  a[a.length -1 ].innerHTML = q * i;
@@ -101,14 +99,14 @@ function addItem(e){
 		  a.push(row.insertCell(-1));
 		  a[a.length -1].innerHTML = i;
 		  }
-		if(item3Big) { //prints table case where y input 3 is greater than y input 4
+		if(item3Big) { //print table case where second y input is less than first y input 
 		  for(var q = newItem4; q <= newItem3; q++) // prints rows that range from newItem4 to newItem3
 		  {
 			  var table = document.getElementById("mult");
 			  var row = table.insertRow(-1);
 			  a.push(row.insertCell(-1));
 			  a[a.length -1].innerHTML = q; // insert the q value into a cell
-			  for(var i = newItem; i <= newItem2; i++) // adds in newItem2 entries per row
+			  for(var i = newItem; i <= newItem2; i++) // adds in entries from first X Input to second X Input
 			  {
 				  a.push(row.insertCell(-1));
 				  a[a.length -1].innerHTML = q * i;
@@ -116,14 +114,14 @@ function addItem(e){
 		  }
 		}
 		else {
-			//print table case where y input 3 is less than y input 4
-			for(q = newItem3; q <= newItem4; q++) // prints rows that range from newItem3 to newItem4  
+			//print table case where second y input is less than first y input 
+			for(q = newItem3; q <= newItem4; q++) //printing rows from first Y input second Y Input 
 		  {
 			  var table = document.getElementById("mult");
 			  var row = table.insertRow(-1);
 			  a.push(row.insertCell(-1));
 			  a[a.length -1].innerHTML = q; // insert the q value into a cell
-			  for(var i = newItem; i <= newItem2; i++) // adds in entries from range newItem to newItem newItem2 
+			  for(var i = newItem; i <= newItem2; i++) // // adds in entries from first X Input to second X Input 
 			  {
 				  a.push(row.insertCell(-1));
 				  a[a.length -1].innerHTML = q * i;
